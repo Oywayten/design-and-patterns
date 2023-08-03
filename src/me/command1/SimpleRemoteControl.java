@@ -7,10 +7,6 @@ package me.command1;
 public class SimpleRemoteControl {
     private Command slot;
 
-    public SimpleRemoteControl(Command slot) {
-        this.slot = slot;
-    }
-
     public void setCommand(Command command) {
         slot = command;
     }
