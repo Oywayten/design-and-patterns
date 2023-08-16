@@ -1,4 +1,4 @@
-package vitaliy.grab.iterator.bistroandpancake;
+package vitaliy.grab.iterator.bistroandpancake.customiterator;
 
 /**
  * Oywayten 08.08.2023.
@@ -23,12 +23,12 @@ public class Waitress {
         Iterator dinerIterator = dinerMenu.createIterator();
         StringBuilder sb = new StringBuilder()
                 .append("MENU").append(NEW_LINE).append("----").append(NEW_LINE)
-                .append("BREAKFAST").append(NEW_LINE).append(printMenu(pancakeIterator)).append(NEW_LINE)
-                .append("LUNCH").append(NEW_LINE).append(printMenu(dinerIterator));
+                .append("BREAKFAST").append(NEW_LINE).append(menuToString(pancakeIterator)).append(NEW_LINE)
+                .append("LUNCH").append(NEW_LINE).append(menuToString(dinerIterator));
         return sb.toString();
     }
 
-    private String printMenu(Iterator iterator) {
+    private String menuToString(Iterator iterator) {
         StringBuilder sb = new StringBuilder();
         while (iterator.hasNext()) {
             MenuItem menuItem = iterator.next();

@@ -1,13 +1,14 @@
-package vitaliy.grab.iterator.bistroandpancake;
+package vitaliy.grab.iterator.bistroandpancake.javaiterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
  * Oywayten 08.08.2023.
  */
 
-public class PancakeHouseMenu {
+public class PancakeHouseMenu implements Menu {
     private final List<MenuItem> menuItems;
 
     public PancakeHouseMenu() {
@@ -37,7 +38,8 @@ public class PancakeHouseMenu {
         menuItems.add(menuItem);
     }
 
-    public PancakeHouseIterator createIterator() {
-        return new PancakeHouseIterator(menuItems);
+    @Override
+    public Iterator<MenuItem> createIterator() {
+        return menuItems.iterator();
     }
 }

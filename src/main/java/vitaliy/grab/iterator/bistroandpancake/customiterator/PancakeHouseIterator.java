@@ -1,4 +1,4 @@
-package vitaliy.grab.iterator.bistroandpancake;
+package vitaliy.grab.iterator.bistroandpancake.customiterator;
 
 import java.util.List;
 

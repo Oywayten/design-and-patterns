@@ -1,4 +1,4 @@
-package vitaliy.grab.iterator.bistroandpancake;
+package vitaliy.grab.iterator.bistroandpancake.customiterator;
 
 /**
  * Oywayten 08.08.2023.

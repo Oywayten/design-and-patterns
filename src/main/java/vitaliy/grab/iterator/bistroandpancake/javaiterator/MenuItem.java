@@ -1,4 +1,4 @@
-package vitaliy.grab.iterator.bistroandpancake;
+package vitaliy.grab.iterator.bistroandpancake.javaiterator;
 
 /**
  * Oywayten 08.08.2023.
