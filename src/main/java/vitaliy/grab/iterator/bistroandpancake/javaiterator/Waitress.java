@@ -7,13 +7,15 @@ import java.util.Iterator;
  */
 
 public class Waitress {
-    private final PancakeHouseMenu pancakeHouseMenu;
-    private final DinerMenu dinerMenu;
+    private final Menu pancakeHouseMenu;
+    private final Menu dinerMenu;
+    private final Menu cafeMenu;
     private static final String NEW_LINE = System.lineSeparator();
 
-    public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu) {
+    public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu, Menu cafeMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;
         this.dinerMenu = dinerMenu;
+        this.cafeMenu = cafeMenu;
     }
 
     public void printMenu() {
@@ -21,13 +23,13 @@ public class Waitress {
     }
 
     public String menuToString() {
-        java.util.Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
-        java.util.Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
-        StringBuilder sb = new StringBuilder()
-                .append("MENU").append(NEW_LINE).append("----").append(NEW_LINE)
-                .append("BREAKFAST").append(NEW_LINE).append(menuToString(pancakeIterator)).append(NEW_LINE)
-                .append("LUNCH").append(NEW_LINE).append(menuToString(dinerIterator));
-        return sb.toString();
+        Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
+        Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
+        Iterator<MenuItem> cafeIterator = cafeMenu.createIterator();
+        return "MENU" + NEW_LINE + "----" + NEW_LINE
+                + "BREAKFAST" + NEW_LINE + menuToString(pancakeIterator) + NEW_LINE
+                + "LUNCH" + NEW_LINE + menuToString(dinerIterator)  + NEW_LINE
+                + "DINNER" + NEW_LINE + menuToString(cafeIterator);
     }
 
     private String menuToString(Iterator<MenuItem> iterator) {
