@@ -5,6 +5,7 @@ package vitaliy.grab.iterator.bistroandpancake.javaiterator;
  */
 
 public class DinerMenu implements Menu {
+    private static final String NAME = "LUNCH";
     private static final int MAX_ITEMS = 6;
     private final MenuItem[] menuItems;
     private int numberOfItems = 0;
@@ -36,5 +37,10 @@ public class DinerMenu implements Menu {
     @Override
     public DinerMenuIterator createIterator() {
         return new DinerMenuIterator(menuItems);
+    }
+
+    @Override
+    public String getName() {
+        return NAME;
     }
 }

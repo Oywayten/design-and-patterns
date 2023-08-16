@@ -1,21 +1,22 @@
 package vitaliy.grab.iterator.bistroandpancake.javaiterator;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Oywayten 08.08.2023.
  */
 
 public class Waitress {
-    private final Menu pancakeHouseMenu;
-    private final Menu dinerMenu;
-    private final Menu cafeMenu;
+    private final List<Menu> menuList = new ArrayList<>();
     private static final String NEW_LINE = System.lineSeparator();
 
-    public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu, Menu cafeMenu) {
-        this.pancakeHouseMenu = pancakeHouseMenu;
-        this.dinerMenu = dinerMenu;
-        this.cafeMenu = cafeMenu;
+    public Waitress() {
+    }
+
+    public void addMenu(Menu menu) {
+        menuList.add(menu);
     }
 
     public void printMenu() {
@@ -23,13 +24,16 @@ public class Waitress {
     }
 
     public String menuToString() {
-        Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
-        Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
-        Iterator<MenuItem> cafeIterator = cafeMenu.createIterator();
-        return "MENU" + NEW_LINE + "----" + NEW_LINE
-                + "BREAKFAST" + NEW_LINE + menuToString(pancakeIterator) + NEW_LINE
-                + "LUNCH" + NEW_LINE + menuToString(dinerIterator)  + NEW_LINE
-                + "DINNER" + NEW_LINE + menuToString(cafeIterator);
+        StringBuilder sb = new StringBuilder("MENU").append(NEW_LINE).append("----").append(NEW_LINE);
+        for (Menu menu : menuList) {
+            String name = menu.getName();
+            sb.append(name).append(NEW_LINE);
+            Iterator<MenuItem> iterator = menu.createIterator();
+            String menuToString = menuToString(iterator);
+            sb.append(menuToString);
+            sb.append(NEW_LINE);
+        }
+        return sb.toString();
     }
 
     private String menuToString(Iterator<MenuItem> iterator) {

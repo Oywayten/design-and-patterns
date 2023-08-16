@@ -15,7 +15,10 @@ public class WaitressTest {
         PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
         DinerMenu dinerMenu = new DinerMenu();
         CafeMenu cafeMenu = new CafeMenu();
-        Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu, cafeMenu);
+        Waitress waitress = new Waitress();
+        waitress.addMenu(pancakeHouseMenu);
+        waitress.addMenu(dinerMenu);
+        waitress.addMenu(cafeMenu);
         String actual = waitress.menuToString();
         String expected = """
                  MENU
@@ -36,6 +39,7 @@ public class WaitressTest {
                  Soup of the day, 3.69 -- A cup of the soup of the day, with a side salad
                  Veggie Burger and Air Fries, 3.99 -- Veggie burger on a whole wheat bun, lettuce, tomato, and fries
                  Burrito, 4.29 -- A large burrito, with whole pinto beans, salsa, guacamole
+                 
                   """;
         assertThat(actual).isEqualToNormalizingNewlines(expected);
     }

@@ -10,6 +10,7 @@ import java.util.Map;
  */
 
 public class CafeMenu implements Menu {
+    private static final String NAME = "DINNER";
     Map<String, MenuItem> menuItems = new HashMap<>();
 
     public CafeMenu() {
@@ -34,6 +35,11 @@ public class CafeMenu implements Menu {
     public Iterator<MenuItem> createIterator() {
         Collection<MenuItem> values = menuItems.values();
         return getIterator(values);
+    }
+
+    @Override
+    public String getName() {
+        return NAME;
     }
 
     private static Iterator<MenuItem> getIterator(Collection<MenuItem> values) {

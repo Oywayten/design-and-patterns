@@ -9,6 +9,7 @@ import java.util.List;
  */
 
 public class PancakeHouseMenu implements Menu {
+    private static final String NAME = "BREAKFAST";
     private final List<MenuItem> menuItems;
 
     public PancakeHouseMenu() {
@@ -41,5 +42,10 @@ public class PancakeHouseMenu implements Menu {
     @Override
     public Iterator<MenuItem> createIterator() {
         return menuItems.iterator();
+    }
+
+    @Override
+    public String getName() {
+        return NAME;
     }
 }
