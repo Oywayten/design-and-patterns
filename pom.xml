@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>vitaliy.grab</groupId>
-    <artifactId>head-first-design-patterns</artifactId>
+    <artifactId>design-and-patterns</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>head-first-design-patterns</name>
+    <name>design-and-patterns</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
