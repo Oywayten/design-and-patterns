@@ -1,4 +1,4 @@
-package vitaliy.grab.state.gumballmachine;
+package vitaliy.grab.state.gumballmachinev1;
 
 /**
  * Oywayten 18.08.2023.
@@ -25,6 +25,10 @@ public class GumballMachine {
 
     public int getState() {
         return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
     }
 
     public String insertQuarter() {

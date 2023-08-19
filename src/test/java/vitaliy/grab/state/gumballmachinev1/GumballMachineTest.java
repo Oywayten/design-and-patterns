@@ -1,9 +1,9 @@
-package vitaliy.grab.state.gumballmachine;
+package vitaliy.grab.state.gumballmachinev1;
 
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static vitaliy.grab.state.gumballmachine.GumballMachine.*;
+import static vitaliy.grab.state.gumballmachinev1.GumballMachine.*;
 
 /**
  * Oywayten 18.08.2023.
