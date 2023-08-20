@@ -76,11 +76,11 @@ class GumballMachineTest {
                 A gumball comes rolling out the slot...
                 A gumball comes rolling out the slot...
                 YOU’RE A WINNER! You got two gumballs for your quarter""";
-        assertThat(removeNewLines(actual)).isIn(removeNewLines(expected1), removeNewLines(expected2)) /*|| actual.equals(expected2)*/;
+        assertThat(removeNewLines(actual)).isIn(removeNewLines(expected1), removeNewLines(expected2));
     }
 
     private String removeNewLines(String str) {
-        return str.replaceAll("\\r\\n|\\r|\\n", "");
+        return str.replaceAll("\\r\\n|\\r", "\n");
     }
 
     @Test
