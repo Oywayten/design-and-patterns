@@ -6,6 +6,12 @@ package vitaliy.grab.state.gumballmachinev2;
 
 public class SoldOutState implements State {
 
+    private final GumballMachine gumballMachine;
+
+    public SoldOutState(GumballMachine gumballMachine) {
+        this.gumballMachine = gumballMachine;
+    }
+
     @Override
     public void insertQuarter() {
         System.out.println("You can’t insert a quarter, the machine is sold out");
@@ -24,5 +30,10 @@ public class SoldOutState implements State {
     @Override
     public void dispense() {
         System.out.println("No gumball dispensed");
+    }
+
+    @Override
+    public void refill() {
+        gumballMachine.setState(gumballMachine.getNoQuarterState());
     }
 }

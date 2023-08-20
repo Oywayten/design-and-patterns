@@ -44,4 +44,9 @@ public class WinnerState implements State {
             gumballMachine.setState(gumballMachine.getSoldOutState());
         }
     }
+
+    @Override
+    public void refill() {
+        System.out.println("Gumball machine not refilled");
+    }
 }
