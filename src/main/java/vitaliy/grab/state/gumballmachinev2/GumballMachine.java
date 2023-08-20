@@ -35,6 +35,10 @@ public class GumballMachine {
         return count;
     }
 
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     public State getSoldOutState() {
         return soldOutState;
     }
@@ -76,6 +80,14 @@ public class GumballMachine {
         System.out.println("A gumball comes rolling out the slot...");
         if (count != 0) {
             count = count - 1;
+        }
+    }
+
+    public void refill(int count) {
+        if (count > 0) {
+            setCount(count);
+            setState(noQuarterState);
+            System.out.println("A gumball machine refilled");
         }
     }
 
